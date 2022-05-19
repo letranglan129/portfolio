@@ -759,10 +759,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
-}
-
 .rounded-\[20px\] {
   border-radius: 20px;
 }
@@ -1440,6 +1436,8 @@ body {
   z-index: -1;
   opacity: 0;
   transition: all 0.5s;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .navbar.active {

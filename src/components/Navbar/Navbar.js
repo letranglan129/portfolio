@@ -36,8 +36,10 @@ function Navbar() {
             </div>
 
             <div
-                className={`md:!mt-0 md:ml-[300px] 960:ml-[400px] container md:px-8 overflow-scroll pb-12 sm:pb-0`}
-                style={{ marginTop: `${marginTop || 100}px` }}
+                className={`md:!mt-0 md:ml-[300px] 960:ml-[400px] container md:px-8 pb-12 sm:pb-0`}
+                style={{ 
+                    marginTop: `${marginTop || 100}px`
+                }}
             >
                 <div className="flex flex-col-reverse 960:flex-row mb-4 md:mb-0">
                     <div className="960:w-3/5 w-full">
