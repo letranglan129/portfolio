@@ -13,10 +13,15 @@ import Products from './components/Products/Products'
 import Work from './components/Work/Work'
 
 function App() {
+
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
         })
+
+        // Change title
+        document.title = 'Portfolio - Le Trang Lan'
     }, [])
 
     return (
