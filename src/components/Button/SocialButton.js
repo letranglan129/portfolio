@@ -1,9 +1,9 @@
 import SocialLink from '../SocialLink/SocialLink'
 
-export default function SocialButton({ children, link }) {
+export default function SocialButton({ children, link, className }) {
     return (
-        <div>
-            <SocialLink link={link}>{children}</SocialLink>
-        </div>
+        <>
+            <SocialLink className={className} link={link}>{children}</SocialLink>
+        </>
     )
 }

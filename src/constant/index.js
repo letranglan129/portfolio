@@ -56,30 +56,6 @@ const CONTACT_INFO = {
     },
 }
 
-const SOCIAL_LINK = {
-    facebook: {
-        link: 'https://www.facebook.com/ltlan',
-        name: 'Facebook',
-        icon: <i className="fab fa-facebook-f"></i>,
-    },
-    linkedIn: {
-        link: 'https://www.linkedin.com/in/ltlan',
-        name: 'LinkedIn',
-        icon: <i className="fab fa-linkedin-in"></i>,
-    },
-    github: {
-        link: 'https://github.com/letranglan129',
-        name: 'Github',
-        icon: <i className="fab fa-github"></i>,
-    },
-    
-    cv: {
-        link: 'https://res.cloudinary.com/dtgkkyqm6/image/upload/v1652955022/portfolio/CV_LeTrangLan.pdf',
-        name: 'Download CV',
-        icon: null,
-    },
-}
-
 const SCROLL_ROUTER = [
     {
         name: 'About',
@@ -99,4 +75,4 @@ const SCROLL_ROUTER = [
     },
 ]
 
-export { CARD_CONTENT_LIST, CONTACT_INFO, SOCIAL_LINK, SCROLL_ROUTER }
+export { CARD_CONTENT_LIST, CONTACT_INFO, SCROLL_ROUTER }

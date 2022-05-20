@@ -1,13 +1,15 @@
-import { SOCIAL_LINK } from '../../constant'
-import SocialButton from '../Button/SocialButton'
+import { useStore } from '../../store/hooks'
+import SocialLink from '../SocialLink/SocialLink'
 
 export default function ContactSocial() {
+    const [state] = useStore()
+
     return (
         <div>
             <div className="text-xl font-semibold mb-8">Let's Connect 🤝</div>
 
             <ul className="grid grid-cols-2 md:grid-cols-4">
-                {Object.keys(SOCIAL_LINK).map((key, index) => (
+                {Object.keys(state.socialLink).map((key, index) => (
                     <li
                         className="button-social m-2"
                         key={index}
@@ -17,12 +19,12 @@ export default function ContactSocial() {
                         data-aos-once="false"
                         data-aos-delay={index * 300}
                     >
-                        <SocialButton link={SOCIAL_LINK[key].link}>
+                        <SocialLink link={state.socialLink[key].link} className='h-full w-full flex items-center justify-center'>
                             <span className="mr-2">
-                                {SOCIAL_LINK[key].icon}
+                                {state.socialLink[key].icon}
                             </span>{' '}
-                            {SOCIAL_LINK[key].name}
-                        </SocialButton>
+                            {state.socialLink[key].name}
+                        </SocialLink>
                     </li>
                 ))}
             </ul>

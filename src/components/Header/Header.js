@@ -1,10 +1,10 @@
 import SocialLink from '../SocialLink/SocialLink'
-import { useStore, actions } from './../../store'
-import { useEffect } from 'react'
-import { SOCIAL_LINK } from '../../constant'
+import { actions, useStore } from './../../store'
 
 function Header({ children, ...props }) {
     const [state, dispatch] = useStore()
+
+    console.log(state)
 
     return (
         <div className="container mx-auto py-4 md:py-6 lg:py-12" id="header">
@@ -27,13 +27,13 @@ function Header({ children, ...props }) {
                     />
                 </div>
                 <div className="mr-auto hidden md:block">
-                    {Object.keys(SOCIAL_LINK).map((key, index) => (
+                    {Object.keys(state.socialLink).map((key, index) => (
                         <div className="inline-block mr-8" key={index}>
-                            <SocialLink link={SOCIAL_LINK[key].link}>
+                            <SocialLink link={state.socialLink[key].link}>
                                 <span className="mr-2">
-                                    {SOCIAL_LINK[key].icon}
+                                    {state.socialLink[key].icon}
                                 </span>
-                                {SOCIAL_LINK[key].name}
+                                {state.socialLink[key].name}
                             </SocialLink>
                         </div>
                     ))}

@@ -11,8 +11,23 @@ import Introduce from './components/Introduce/Introduce'
 import Navbar from './components/Navbar/Navbar'
 import Products from './components/Products/Products'
 import Work from './components/Work/Work'
+import { actions, useStore } from './store'
 
 function App() {
+
+    const [state, dispatch] = useStore()
+    useEffect(() => {
+
+        const getCVLink = async () => {
+            const res = await fetch(
+                'https://api-constant.herokuapp.com/portfolio?segment=CV'
+            )
+            const data = await res.json()
+            dispatch(actions.getCVLink(data.cv))
+        }
+
+        getCVLink()
+    }, [])
 
 
     useEffect(() => {

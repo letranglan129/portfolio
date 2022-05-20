@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'react-scroll/modules/components/Link'
-import { SCROLL_ROUTER, SOCIAL_LINK } from '../../constant'
+import { SCROLL_ROUTER } from '../../constant'
 import { actions } from '../../store'
 import ContactList from '../Contact/ContactList'
 import HeaderLink from '../Header/HeaderLink'
@@ -75,13 +75,13 @@ function Navbar() {
                 </div>
 
                 <div className="mr-auto w-full flex flex-wrap">
-                    {Object.keys(SOCIAL_LINK).map(key => (
+                    {Object.keys(state.socialLink).map(key => (
                         <div className="mb-2 mr-8" key={key}>
-                            <SocialLink link={SOCIAL_LINK[key].link}>
-                                {SOCIAL_LINK[key].icon && <span className='mr-2'>
-                                    {SOCIAL_LINK[key].icon}
+                            <SocialLink link={state.socialLink[key].link}>
+                                {state.socialLink[key].icon && <span className='mr-2'>
+                                    {state.socialLink[key].icon}
                                 </span>}
-                                {SOCIAL_LINK[key].name}
+                                {state.socialLink[key].name}
                             </SocialLink>
                         </div>
                     ))}
