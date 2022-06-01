@@ -45,7 +45,7 @@ export default function Work() {
                     smooth={true}
                     duration={1500}
                 >
-                    <div className="items-center hidden xl:flex">
+                    <div className="items-center hidden xl:flex cursor-pointer">
                         <ScrollButton>
                             <i className="fas fa-angle-double-down"></i>
                         </ScrollButton>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Link from 'react-scroll/modules/components/Link'
 import { SCROLL_ROUTER } from '../../constant'
 import { actions } from '../../store'
@@ -9,20 +8,7 @@ import { useStore } from './../../store/hooks'
 
 function Navbar() {
     const [state, dispatch] = useStore()
-    const [marginTop, setMarginTop] = useState(100)
 
-    useEffect(() => {
-        let timeOut
-        const handleResize = () => {
-            clearTimeout(timeOut)
-
-            timeOut = setTimeout(() => {
-                const headerEl = document.querySelector('#header')
-                setMarginTop(headerEl?.offsetHeight)
-            }, 250)
-        }
-        window.addEventListener('resize', handleResize)
-    }, [])
     return (
         <div className={`navbar ${state.isOpenNavbar && 'active'}`}>
             <div className="absolute top-0 left-0 md:w-[300px] 960:w-[400px] bottom-0 bg-[#1b1b87] hidden md:block">
@@ -36,10 +22,7 @@ function Navbar() {
             </div>
 
             <div
-                className={`md:!mt-0 md:ml-[300px] 960:ml-[400px] container md:px-8 pb-12 sm:pb-0`}
-                style={{ 
-                    marginTop: `${marginTop || 100}px`
-                }}
+                className={`md:!mt-0 md:ml-[300px] 960:ml-[400px] mt-[80px] container md:px-8 pb-12 sm:pb-0`}
             >
                 <div className="flex flex-col-reverse 960:flex-row mb-4 md:mb-0">
                     <div className="960:w-3/5 w-full">
@@ -47,10 +30,10 @@ function Navbar() {
                     </div>
                     <div className="960:w-2/5 w-full">
                         <ul>
-                            {SCROLL_ROUTER.map((item, index) => (
+                            {Object.keys(SCROLL_ROUTER).map((item, index) => (
                                 <Link
                                     activeClass="active"
-                                    to={item.link}
+                                    to={SCROLL_ROUTER[item]}
                                     spy={true}
                                     smooth={true}
                                     duration={1500}
@@ -65,7 +48,7 @@ function Navbar() {
                                         data-aos="new-fade-up"
                                     >
                                         <HeaderLink link="#">
-                                            {item.name}
+                                            {item}
                                         </HeaderLink>
                                     </li>
                                 </Link>

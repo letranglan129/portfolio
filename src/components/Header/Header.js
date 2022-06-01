@@ -4,8 +4,6 @@ import { actions, useStore } from './../../store'
 function Header({ children, ...props }) {
     const [state, dispatch] = useStore()
 
-    console.log(state)
-
     return (
         <div className="container mx-auto py-4 md:py-6 lg:py-12" id="header">
             <div className="flex items-center">
@@ -26,7 +24,7 @@ function Header({ children, ...props }) {
                         className="block md:hidden"
                     />
                 </div>
-                <div className="mr-auto hidden md:block">
+                <div className="mr-auto hidden 960:block">
                     {Object.keys(state.socialLink).map((key, index) => (
                         <div className="inline-block mr-8" key={index}>
                             <SocialLink link={state.socialLink[key].link}>

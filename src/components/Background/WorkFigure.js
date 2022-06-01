@@ -5,7 +5,7 @@ export default function WorkFigure() {
         <>
             <div className="work-circles"></div>
             <ParallaxProvider>
-                <div className="work-figures pointer-events-none">
+                <div className="work-figures pointer-events-none z-10">
                     <Parallax
                         translateY={['130px', '-130px']}
                         easing="easeInQuad"

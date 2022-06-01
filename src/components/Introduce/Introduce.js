@@ -32,7 +32,7 @@ export default function Introduce() {
                 smooth={true}
                 duration={1500}
             >
-                <div className="flex items-center ">
+                <div className="flex items-center cursor-pointer">
                     <ScrollButton>
                         <i className="fas fa-angle-double-down"></i>
                     </ScrollButton>

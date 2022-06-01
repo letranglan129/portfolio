@@ -1,4 +1,4 @@
-import { TOGGLE_NAVBAR, GET_CV_LINK } from './constants'
+import { TOGGLE_NAVBAR, GET_CV_LINK, GET_TECH_LIST } from './constants'
 
 const initialState = {
     isOpenNavbar: false,
@@ -24,6 +24,7 @@ const initialState = {
             icon: null,
         },
     },
+    techList: [],
 }
 
 function reducer(state = initialState, { type, payload }) {
@@ -44,6 +45,13 @@ function reducer(state = initialState, { type, payload }) {
                 },
             }
             return
+        }
+
+        case GET_TECH_LIST: {
+            return {
+                ...state,
+                techList: payload,
+            }
         }
 
         default:

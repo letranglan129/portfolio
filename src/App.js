@@ -1,5 +1,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { collection, getDocs, query } from 'firebase/firestore'
 import { useEffect } from 'react'
 import { Element } from 'react-scroll/modules'
 import IntroduceFigure from './components/Background/IntroduceFigure'
@@ -11,11 +12,13 @@ import Introduce from './components/Introduce/Introduce'
 import Navbar from './components/Navbar/Navbar'
 import Products from './components/Products/Products'
 import Work from './components/Work/Work'
+import { db } from './firebase/config'
 import { actions, useStore } from './store'
 
 function App() {
 
     const [state, dispatch] = useStore()
+
     useEffect(() => {
 
         const getCVLink = async () => {
@@ -27,6 +30,21 @@ function App() {
         }
 
         getCVLink()
+    }, [])
+
+    useEffect(() => {
+        const fetchTechList = async () => {
+            const q = query(collection(db, 'tech'))
+
+            const techsSnapshot = await getDocs(q)
+            const techs = []
+            techsSnapshot.forEach(doc => {
+                techs.push(doc.data())
+            })
+            dispatch(actions.getTechList(techs[0].techList))
+        }
+
+        fetchTechList()
     }, [])
 
 

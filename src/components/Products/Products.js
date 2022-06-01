@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
-import { Grid, Navigation } from 'swiper'
+import { Grid, Navigation, Pagination } from 'swiper'
 import { SwiperSlide } from 'swiper/react'
 import { db } from '../../firebase/config'
 import ProductFigure from '../Background/ProductFigure'
@@ -23,7 +23,6 @@ export default function Products() {
 
             setProducts(products)
         }
-
         getProducts()
     }, [])
 
@@ -57,7 +56,7 @@ export default function Products() {
                     <div label="Website">
                         <div className="container overflow-hidden p-0">
                             <CardList
-                                modules={[Grid, Navigation]}
+                                modules={[Grid, Navigation, Pagination]}
                                 spaceBetween={32}
                                 slidesPerView={3}
                                 speed={700}
@@ -69,26 +68,30 @@ export default function Products() {
                                     rows: 2,
                                     fill: 'row',
                                 }}
+                                pagination={{
+                                    el: '.swiper-pagination',
+                                    clickable: true,
+                                }}
                                 breakpoints={{
                                     1279: {
                                         slidesPerView: 3,
                                         grid: {
                                             rows: 2,
-                                            fill: 'rows',
+                                            fill: 'row',
                                         },
                                     },
                                     640: {
                                         slidesPerView: 2,
                                         grid: {
                                             rows: 2,
-                                            fill: 'rows',
+                                            fill: 'row',
                                         },
                                     },
                                     0: {
                                         slidesPerView: 1,
                                         grid: {
                                             rows: 1,
-                                            fill: 'rows',
+                                            fill: 'row',
                                         },
                                     },
                                 }}

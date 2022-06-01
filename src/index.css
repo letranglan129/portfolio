@@ -538,16 +538,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 50%;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .\!z-0 {
   z-index: 0 !important;
 }
 
 .z-50 {
   z-index: 50;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .m-2 {
@@ -563,16 +563,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 1.5rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mr-8 {
   margin-right: 2rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mb-8 {
@@ -591,12 +599,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 1rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mb-24 {
   margin-bottom: 6rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-auto {
@@ -615,8 +623,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 4rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mt-\[80px\] {
+  margin-top: 80px;
 }
 
 .mb-\[72px\] {
@@ -663,6 +671,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -683,12 +695,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
 
 .w-32 {
   width: 8rem;
+}
+
+.min-w-max {
+  min-width: -webkit-max-content;
+  min-width: max-content;
 }
 
 .max-w-\[400px\] {
@@ -723,10 +744,6 @@ Ensure the default browser behavior of the `hidden` attribute.
           user-select: none;
 }
 
-.resize {
-  resize: both;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -755,8 +772,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-\[20px\] {
@@ -781,6 +810,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#1b1b87\] {
   --tw-bg-opacity: 1;
   background-color: rgb(27 27 135 / var(--tw-bg-opacity));
@@ -795,6 +829,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0px;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -803,11 +847,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .pb-0 {
@@ -928,11 +967,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-\[\#9d9d9d\] {
-  --tw-text-opacity: 1;
-  color: rgb(157 157 157 / var(--tw-text-opacity));
-}
-
 .text-\[\#4c40f7\] {
   --tw-text-opacity: 1;
   color: rgb(76 64 247 / var(--tw-text-opacity));
@@ -983,6 +1017,7 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   color: #111029;
+  overflow-y: overlay;
 }
 
 .App {
@@ -1332,7 +1367,7 @@ body {
 .swiper .swiper-prev {
   position: relative;
   width: 30px;
-  height: 12px;
+  height: 16px;
   cursor: pointer;
 }
 
@@ -1534,6 +1569,33 @@ body {
 
 #products .swiper-slide {
   height: auto;
+}
+
+#products .swiper .swiper-pagination {
+  position: relative;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#products .swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #9f9fa9;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+
+#products .swiper .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {
+  margin-left: 10px;
+}
+
+#products .swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #4c40f7;
+  width: 10px;
+  height: 10px;
 }
 
 #products .slide-swiper .card {
@@ -2417,9 +2479,22 @@ body {
   }
 }
 
-.hover\:text-blue-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
+/* SCROLLBAR */
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: color;
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .hover\:text-\[\#4c40f7\]:hover {
@@ -2432,11 +2507,6 @@ body {
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
 
-.hover\:underline:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-}
-
 @media (min-width: 960px) {
   .\39 60\:mb-0 {
     margin-bottom: 0px;
@@ -2444,6 +2514,10 @@ body {
 
   .\39 60\:ml-\[400px\] {
     margin-left: 400px;
+  }
+
+  .\39 60\:block {
+    display: block;
   }
 
   .\39 60\:w-\[400px\] {

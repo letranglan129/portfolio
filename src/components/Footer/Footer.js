@@ -22,17 +22,17 @@ export default function Footer() {
 
                         <div className="footer-links">
                             <ul>
-                                {SCROLL_ROUTER.map((item, index) => (
+                                {Object.keys(SCROLL_ROUTER).map((item, index) => (
                                     <li key={index}>
                                         <Link
                                             activeClass="active"
-                                            to={item.link}
+                                            to={SCROLL_ROUTER[item]}
                                             spy={true}
                                             smooth={true}
                                             duration={1500}
                                         >
                                             <div className="footer-link">
-                                                {item.name}
+                                                {item}
                                             </div>
                                         </Link>
                                     </li>

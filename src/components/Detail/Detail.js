@@ -1,7 +1,8 @@
 import { Element } from 'react-scroll/modules'
+import Link from 'react-scroll/modules/components/Link'
 import { Grid, Navigation } from 'swiper'
 import { SwiperSlide } from 'swiper/react'
-import { CARD_CONTENT_LIST } from '../../constant'
+import { CARD_CONTENT_LIST, SCROLL_ROUTER } from '../../constant'
 import DetailFigure from '../Background/DetailFigure'
 import Button from '../Button/Button'
 import { CardList } from '../Card'
@@ -47,15 +48,23 @@ export default function Detail() {
                     </Title>
                 </div>
 
-                <Button
-                    data-aos-easing="ease-out-cubic"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-once="false"
+                <Link
+                    activeClass="active"
+                    to={SCROLL_ROUTER.Contact}
+                    spy={true}
+                    smooth={true}
+                    duration={1500}
                 >
-                    <span className="mr-4">Contact Me</span>
-                    <i className="far fa-long-arrow-right"></i>
-                </Button>
+                    <Button
+                        data-aos-easing="ease-out-cubic"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-once="false"
+                    >
+                        <span className="mr-4">Contact Me</span>
+                        <i className="far fa-long-arrow-right"></i>
+                    </Button>
+                </Link>
             </div>
             <DetailFigure />
             <Element name="goToSkillsElement">
@@ -67,6 +76,7 @@ export default function Detail() {
                     <CardList
                         modules={[Grid, Navigation]}
                         spaceBetween={32}
+                        slidesPerView={2}
                         navigation={{
                             nextEl: '.swiper-next',
                             prevEl: '.swiper-prev',
@@ -78,16 +88,16 @@ export default function Detail() {
                         speed={700}
                         breakpoints={{
                             576: {
-                                slidesPerView: 2,
                                 spaceBetween: 18,
+                                slidesPerView: 3,
                                 grid: {
                                     rows: 2,
                                     fill: 'row',
                                 },
                             },
-                            1024: {
-                                slidesPerView: 4,
+                            840: {
                                 spaceBetween: 32,
+                                slidesPerView: 4,
                                 grid: {
                                     rows: 2,
                                     fill: 'row',
@@ -101,9 +111,9 @@ export default function Detail() {
                                     className="mb-8"
                                     data-aos-easing="ease-out-cubic"
                                     data-aos="fade-up"
-                                    data-aos-duration="1000"
+                                    data-aos-duration="500"
                                     data-aos-once="false"
-                                    data-aos-delay={index * 100}
+                                    data-aos-delay={index * 50}
                                 >
                                     <div className="flex items-center justify-center mx-auto w-32 h-32 mb-4">
                                         <img src={CARD.src} alt="" />

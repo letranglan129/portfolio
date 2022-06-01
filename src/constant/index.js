@@ -56,23 +56,11 @@ const CONTACT_INFO = {
     },
 }
 
-const SCROLL_ROUTER = [
-    {
-        name: 'About',
-        link: 'goToAboutElement',
-    },
-    {
-        name: 'Skills',
-        link: 'goToSkillsElement',
-    },
-    {
-        name: 'Products',
-        link: 'goToProductsElement',
-    },
-    {
-        name: 'Contact',
-        link: 'goToContactElement',
-    },
-]
+const SCROLL_ROUTER = {
+    About: 'goToAboutElement',
+    Skills: 'goToSkillsElement',
+    Products: 'goToProductsElement',
+    Contact: 'goToContactElement',
+}
 
 export { CARD_CONTENT_LIST, CONTACT_INFO, SCROLL_ROUTER }

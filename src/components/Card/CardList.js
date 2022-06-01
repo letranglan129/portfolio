@@ -12,7 +12,7 @@ export default function CardList({ children, ...props }) {
             {props.pagination && <div className="swiper-pagination"></div>}
 
             {props.navigation && (
-                <div className="flex items-center justify-center mt-16 h-14">
+                <div className="flex items-center justify-center mt-8 h-14">
                     <div className="swiper-prev mr-8">
                         <span>
                             <svg
