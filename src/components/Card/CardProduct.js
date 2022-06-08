@@ -7,7 +7,7 @@ export default function CardProduct({
     sourceURL,
     tech,
 }) {
-    const [state] = useStore()
+    const [state, dispatch] = useStore()
 
     return (
         <>

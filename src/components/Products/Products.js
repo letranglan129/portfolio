@@ -26,6 +26,8 @@ export default function Products() {
         getProducts()
     }, [])
 
+    console.log(products)
+
     return (
         <div
             className="relative pt-[64px] mb-[72px] md:mb-[90px] lg:pt-[96px] xl:pt-[128px] xl:mb-[130px] overflow-hidden z-10"
@@ -103,6 +105,7 @@ export default function Products() {
                                             srcImage={product.image}
                                             demoURL={product.demoURL}
                                             sourceURL={product.sourceURL}
+                                            tech={product.tech}
                                         />
                                     </SwiperSlide>
                                 ))}
